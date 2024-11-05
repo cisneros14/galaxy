@@ -1,0 +1,147 @@
+body {
+    background: #000000;
+    background-image: url('asfalt-light.png');
+  }
+  
+  .background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  h1 {
+    text-align: center;
+    font-family: ui-monospace;
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+  
+    --bg-size: 200%;
+    --color-1: #999;
+    --color-2: hsl(221.25deg 72.73% 82.75%);
+  
+    background: linear-gradient(
+        90deg,
+        var(--color-1),
+        var(--color-2),
+        var(--color-1)
+      )
+      0 0 / var(--bg-size) 100%;
+  
+    color: transparent;
+    background-image: linear-gradient(
+      135deg,
+      #bdb9c3,
+      #c09bff 33%,
+      #4ea4ee 66%,
+      #bdb9c3
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: 1px 1px #4cf8b830, -1px -1px #f8585830, 1px -1px #a392ff30,
+      -1px 1px #e58bff30;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    h1 {
+      animation: dynamic-bg 8s linear infinite;
+    }
+  
+    @keyframes dynamic-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+  }
+  
+  .rotating-box {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(65deg) rotateX(50deg);
+    transform-style: preserve-3d;
+  }
+  
+  .rotation-list {
+    width: 500px;
+    height: 500px;
+    transform-style: preserve-3d;
+    animation: rotateX 20s linear infinite;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .list-item {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px #aea4e4;
+    animation: rotating 20s linear infinite, shadow-gradient 20s linear infinite;
+  }
+  
+  @keyframes rotating {
+    0% {
+      box-shadow: 0 0 10px #aea4e4;
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(94, 192, 255, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 10px #aea4e4;
+    }
+  }
+  
+  @keyframes shadow-gradient {
+    0% {
+      box-shadow: none;
+    }
+    10% {
+      box-shadow: 0 0 20px #aea4e4;
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(94, 192, 255, 0.5);
+    }
+    90% {
+      box-shadow: 0 0 20px #aea4e4;
+    }
+    100% {
+      box-shadow: none;
+    }
+  }
+  
+  .list-item span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(https://pic1.zhimg.com/80/v2-86e05dbd4a6f69fb8d1a84769e22c330_720w.png)
+      no-repeat center center;
+    filter: hue-rotate(160deg);
+    background-size: cover;
+    animation: rotate 4s linear infinite;
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .item-2 {
+    transform: rotateX(60deg) rotateZ(60deg);
+  }
+  
+  .item-3 {
+    transform: rotateX(-60deg) rotateZ(-60deg);
+  }
